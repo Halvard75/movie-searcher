@@ -1,0 +1,21 @@
+<h1>Fais ta recherche mec</h1>
+
+<%= form_tag (home_index_path), method: :get do %>
+
+<%= text_field_tag :movie, '', :class => "form-control" %>
+
+<%= submit_tag "Cherche ton film", :class => "btn btn-default" %>
+
+<% end %>
+
+<% if @search %>
+<% @search.each do |mabite| %>
+
+<%=  mabite.title %><br>
+<%=  mabite.genres %><br>
+<%=  mabite.release_date %><br>
+<%=  mabite.revenue %><br>
+<%=  mabite.popularity %><br>
+<%=  mabite.backdrop_path %><br>
+<% end %>
+<% end %>
